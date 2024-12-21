@@ -1,0 +1,35 @@
+{
+  "name": "vue-data-ui-cli",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A CLI tool to generate Vue Data UI chart component boilerplates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Vue Data UI",
+    "Vue",
+    "Vue 3",
+    "CLI",
+    "CLI tool",
+    "boilerplate",
+    "charts"
+  ],
+  "author": "Alec Lloyd Probert",  
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.4.0",
+    "commander": "^12.1.0",
+    "inquirer": "^12.2.0",
+    "vue": "^3.5.13"
+  },
+  "type": "module",
+  "bin": {
+    "vue-data-ui-cli": "./index.js"
+  },
+  "peerDependencies": {
+    "prettier": "^3.4.2",
+    "vue-data-ui": "^2.4.45"
+  }
+}
