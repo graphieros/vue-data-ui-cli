@@ -1,5 +1,9 @@
 # Vue Data UI CLI
 
+[![npm](https://img.shields.io/npm/v/vue-data-ui-cli)](https://github.com/graphieros/vue-data-ui-cli)
+[![GitHub issues](https://img.shields.io/github/issues/graphieros/vue-data-ui-cli)](https://github.com/graphieros/vue-data-ui-cli/issues)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/graphieros/vue-data-ui-cli?tab=MIT-1-ov-file#readme)
+
 A CLI tool to generate Vue Data UI chart component boilerplates.
 
 ## Installation
