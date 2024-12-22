@@ -9,7 +9,8 @@ export default ({
   datasetType,
   isDatasetArray,
   componentSlots,
-  componentLink
+  componentLink,
+  emits
 }) => {
 
   const dsType = useTypescript ? `<${`${datasetType}${isDatasetArray ? '[]' : ''}`}>` : '';
@@ -24,14 +25,28 @@ export default ({
       </template>-->
   `;
 
+  // let emitFuncs = '';
+  // let emitDefs = '';
+
+  // if (emits && emits.length) {
+  //   emitFuncs = emits.map(emit => {
+  //     return `${useTypescript ? emit.funcTs : emit.func}`
+  //   }).toString().replaceAll(',', '\n\n');
+  
+  //   emitDefs = emits.map(emit => {
+  //     return `@${emit.name}="${emit.name}"`;
+  //   }).toString().replaceAll(',', '');
+  // }
+
+
   return `
 <script setup${useTypescript ? ' lang="ts"' : ''}>
 import { ${[useComputedConfig, useComputedDataset].includes(false) ? 'ref, ' : ''}${useComputedConfig || useComputedDataset ? 'computed ' : ''}} from "vue";
-import { VueDataUi${useTypescript ? `, type ${datasetType}, type ${configType} }` : '}'} from "vue-data-ui";
+import { VueDataUi${useTypescript ? `,${['number', 'Array<Array<string | number>>', ''].includes(datasetType) ? '' : `type ${datasetType},`} type ${configType} }` : '}'} from "vue-data-ui";
 
-const dataset = ${useComputedDataset ? `computed${dsType}(() => {
+${!datasetType ? '' : `const dataset = ${useComputedDataset ? `computed${dsType}(() => {
   return ${ds};
-})` : `ref${dsType}(${ds})`};
+})` : `ref${dsType}(${ds})`};`}
 
 /**
  * This is the default config.
@@ -48,13 +63,13 @@ const config = ${useComputedConfig ? `computed${confType}(() => {
   <div :style="{ width: '600px' }">
     <VueDataUi
       component="${component}"
-      :dataset="dataset"
+      ${!datasetType ? '' : `:dataset="dataset"`}
       :config="config"
-    >
-      <!-- Include slots here -->
-      <!-- For more info on slots, check the slots tab at https://vue-data-ui.graphieros.com/docs#${componentLink} -->
+    ${componentSlots.length ? '>' : '/>'}
+      ${ componentSlots.length ? '<!-- Use slots here in template tags. Official Vue slots documentation https://vuejs.org/guide/components/slots -->' : '' }
+      ${ componentSlots.length ? `<!-- Documentation on Vue Data UI slots, check the slots tab at https://vue-data-ui.graphieros.com/docs#${componentLink} -->` : '' }
       ${ componentSlots.includes('source') ? sourceSlot : ''}
-    </VueDataUi>
+    ${componentSlots.length ? '</VueDataUi>' : ''}
   </div>
 </template>
 `;
