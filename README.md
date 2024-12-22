@@ -26,3 +26,7 @@ You will be prompted for the following:
 - The directory to create the component
 
 The tool will then create a Vue file containing the boilerplate chart component, with a sample dataset for immediate testing.
+
+## Vue Data UI documentation
+
+Check out the [official documentation website](https://vue-data-ui.graphieros.com/)
