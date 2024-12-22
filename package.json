@@ -18,6 +18,11 @@
   ],
   "author": "Alec Lloyd Probert",  
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graphieros/vue-data-ui-cli.git"
+  },
+  "homepage": "https://vue-data-ui.graphieros.com/",
   "dependencies": {
     "chalk": "^5.4.0",
     "commander": "^12.1.0",
