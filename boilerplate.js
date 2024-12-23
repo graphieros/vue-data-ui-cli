@@ -25,18 +25,18 @@ export default ({
       </template>-->
   `;
 
-  // let emitFuncs = '';
-  // let emitDefs = '';
+  let emitFuncs = '';
+  let emitDefs = '';
 
-  // if (emits && emits.length) {
-  //   emitFuncs = emits.map(emit => {
-  //     return `${useTypescript ? emit.funcTs : emit.func}`
-  //   }).toString().replaceAll(',', '\n\n');
+  if (emits && emits.length) {
+    emitFuncs = emits.map(emit => {
+      return `${useTypescript ? emit.funcTs : emit.func}`
+    }).toString().replaceAll(',', '\n\n');
   
-  //   emitDefs = emits.map(emit => {
-  //     return `@${emit.name}="${emit.name}"`;
-  //   }).toString().replaceAll(',', '');
-  // }
+    emitDefs = emits.map(emit => {
+      return `@${emit.name}="${emit.name}"`;
+    }).toString().replaceAll(',', '');
+  }
 
 
   return `
@@ -57,6 +57,8 @@ const config = ${useComputedConfig ? `computed${confType}(() => {
   return ${conf};
 })` : `ref${confType}(${conf})`};
 
+${emitFuncs}
+
 </script>
 
 <template>
@@ -65,6 +67,7 @@ const config = ${useComputedConfig ? `computed${confType}(() => {
       component="${component}"
       ${!datasetType ? '' : `:dataset="dataset"`}
       :config="config"
+      ${emitDefs}
     ${componentSlots.length ? '>' : '/>'}
       ${ componentSlots.length ? '<!-- Use slots here in template tags. Official Vue slots documentation https://vuejs.org/guide/components/slots -->' : '' }
       ${ componentSlots.length ? `<!-- Documentation on Vue Data UI slots, check the slots tab at https://vue-data-ui.graphieros.com/docs#${componentLink} -->` : '' }

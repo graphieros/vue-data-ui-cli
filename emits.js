@@ -1,4 +1,4 @@
-export default(componentName) => {
+export default (componentName) => {
     const emitExamples = {
         VueUiXy: [
             {
@@ -19,10 +19,10 @@ export default(componentName) => {
                     console.log({ legend });
                 }`,
                 funcTs: `type VueUiXySelectedLegend = {
-                    name: string
-                    values: number[]
-                    color: string
-                    type: 'line' | 'bar' | 'plot'
+                    readonly name: string
+                    readonly values: number[]
+                    readonly color: string
+                    readonly type: 'line' | 'bar' | 'plot'
                 }
                 /*
                 * @selectLegend - Returns the current visible series when selecting / unselecting the legend
@@ -60,13 +60,13 @@ export default(componentName) => {
                 */
                 type VueUiXySelectedX = {
                     dataset: Array<{
-                        name: string
-                        value: number
-                        color: string
-                        type: 'line' | 'bar' | 'plot'
+                        readonly name: string
+                        readonly value: number
+                        readonly color: string
+                        readonly type: 'line' | 'bar' | 'plot'
                     }>
-                    index: number
-                    indexLabel: string
+                    readonly index: number
+                    readonly indexLabel: string
                 }
                 function selectX(selectedX: VueUiXySelectedX) {
                     console.log({ selectedX });
@@ -105,17 +105,17 @@ export default(componentName) => {
                 */
                 type VueUiXySelectedTimeLabel = {
                     datapoint: Array<{
-                        shape: 'circle' | 'triangle' | 'square' | 'dialond' | 'pentagon' | 'star' | 'hexagon'
-                        name: string
-                        color: string
-                        type: 'line' | 'bar' | 'plot'
-                        value: number
-                        comments: string[]
-                        prefix: string
-                        suffix: string
+                        readonly shape: 'circle' | 'triangle' | 'square' | 'diamond' | 'pentagon' | 'star' | 'hexagon'
+                        readonly name: string
+                        readonly color: string
+                        readonly type: 'line' | 'bar' | 'plot'
+                        readonly value: number
+                        readonly comments: string[]
+                        readonly prefix: string
+                        readonly suffix: string
                     }>
-                    absoluteIndex: number
-                    label: string
+                    readonly absoluteIndex: number
+                    readonly label: string
                 }
                 function selectTimeLabel(selectedTimeLabel: VueUiXySelectedTimeLabel) {
                     console.log({ selectedTimeLabel })
@@ -125,31 +125,89 @@ export default(componentName) => {
         ],
         VueUiDonut: [
             {
-                name: 'selectLegend',
+                name: 'selectDatapoint',
                 func: `/**
-                 * @selectLegend - Returns the current visible series when selecting / unselecting the legend
-                 *
-                 * @typedef {Object} VueUiDonutSelectedLegend
-                 * @property {string} name - The name of the legend item.
-                 * @property {number} value - The value associated with the legend item.
-                 * @property {string} color - The color representing the legend item.
-                 *
-                 * @param {VueUiDonutSelectedLegend[]} legend - The current visible series when selecting or unselecting the legend.
-                 * @returns {void}
-                 */
-                function selectLegend(legend){
-                    console.log({ legend });
-                }`,
-                funcTs: `type VueUiDonutSelectedLegend = {
-                    name: string
-                    value: number
-                    color: string
-                }
-                /*
-                * @selectLegend - Returns the current visible series when selecting / unselecting the legend
+                * @selectDatapoint - On click returns the data related to the selected donut arc
+                *
+                * @typedef {Object} VueUiDonutDatapoint
+                * @property {number} index - The index of the datapoint in the dataset.
+                * @property {number[]} absoluteValues - The array of absolute values associated with the datapoint.
+                * @property {string} arcSlice - The SVG path describing the arc slice.
+                * @property {Object} center - The center point of the donut slice.
+                * @property {number} center.endX - The ending X coordinate of the center.
+                * @property {number} center.endY - The ending Y coordinate of the center.
+                * @property {string} center.path - The path associated with the center point.
+                * @property {number} center.startX - The starting X coordinate of the center.
+                * @property {number} center.startY - The starting Y coordinate of the center.
+                * @property {string} color - The color of the datapoint slice.
+                * @property {string} comment - A comment or note associated with the datapoint.
+                * @property {number} cx - The X coordinate of the slice center.
+                * @property {number} cy - The Y coordinate of the slice center.
+                * @property {number} endX - The ending X coordinate of the arc.
+                * @property {number} endY - The ending Y coordinate of the arc.
+                * @property {Object} firstSeparator - The first separator coordinates for the arc.
+                * @property {number} firstSeparator.x - The X coordinate of the first separator.
+                * @property {number} firstSeparator.y - The Y coordinate of the first separator.
+                * @property {string} name - The name of the datapoint.
+                * @property {string} path - The SVG path of the arc.
+                * @property {number} proportion - The proportion of the datapoint relative to the total.
+                * @property {number} ratio - The ratio of the datapoint relative to the total.
+                * @property {Object} separator - The separator coordinates for the arc.
+                * @property {number} separator.x - The X coordinate of the separator.
+                * @property {number} separator.y - The Y coordinate of the separator.
+                * @property {number} seriesIndex - The index of the series to which the datapoint belongs.
+                * @property {number} startX - The starting X coordinate of the arc.
+                * @property {number} startY - The starting Y coordinate of the arc.
+                * @property {number} value - The value associated with the datapoint.
+                *
+                * Logs the data related to the selected donut arc.
+                *
+                * @param {VueUiDonutDatapoint} datapoint - The data related to the selected donut arc.
+                * @returns {void}
                 */
-                function selectLegend(legend: VueUiDonutSelectedLegend[]){
-                    console.log({ legend });
+                function selectDatapoint(datapoint) {
+                    console.log(datapoint);
+                }`,
+                funcTs: `type VueUiDonutDatapoint = {
+                    readonly index: number
+                    readonly absoluteValues: number[]
+                    readonly arcSlice: string
+                    readonly center: {
+                        endX: number
+                        endY: number
+                        path: string
+                        startX: number
+                        startY: number
+                    }
+                    readonly color: string
+                    readonly comment: string
+                    readonly cx: number
+                    readonly cy: number
+                    readonly endX: number
+                    readonly endY: number
+                    readonly firstSeparator: {
+                        x: number
+                        y: number
+                    }
+                    readonly name: string
+                    readonly path: string
+                    readonly proportion: number
+                    readonly ratio: number
+                    readonly separator: {
+                        x: number
+                        y: number
+                    }
+                    readonly seriesIndex: number
+                    readonly startX: number
+                    readonly startY: number
+                    readonly value: number
+                }
+
+                /**
+                * @selectDatapoint - On click returns the data related to the selected donut arc
+                */
+                function selectDatapoint(datapoint: VueUiDonutDatapoint){
+                    console.log(datapoint)
                 }`,
             },
         ],
