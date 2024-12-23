@@ -43,6 +43,7 @@ export default ({
 <script setup${useTypescript ? ' lang="ts"' : ''}>
 import { ${[useComputedConfig, useComputedDataset].includes(false) ? 'ref, ' : ''}${useComputedConfig || useComputedDataset ? 'computed ' : ''}} from "vue";
 import { VueDataUi${useTypescript ? `,${['number', 'Array<Array<string | number>>', ''].includes(datasetType) ? '' : `type ${datasetType},`} type ${configType} }` : '}'} from "vue-data-ui";
+import "vue-data-ui/style.css";
 
 ${!datasetType ? '' : `const dataset = ${useComputedDataset ? `computed${dsType}(() => {
   return ${ds};
