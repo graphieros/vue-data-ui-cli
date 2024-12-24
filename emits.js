@@ -211,6 +211,197 @@ export default (componentName) => {
                 }`,
             },
         ],
+        VueUiSparkline: [
+            {
+                name: 'selectDatapoint',
+                func: `/**
+                 * @typedef {Object} VueUiSparklineDatapoint
+                 * @property {Object} datapoint - The datapoint details.
+                 * @property {number} datapoint.absoluteValue - The absolute value of the datapoint.
+                 * @property {string} datapoint.color - The color associated with the datapoint.
+                 * @property {string} datapoint.id - The unique identifier of the datapoint.
+                 * @property {string} datapoint.period - The period associated with the datapoint.
+                 * @property {number} datapoint.plotValue - The value to be plotted for the datapoint.
+                 * @property {number} datapoint.toMax - The value to the maximum range.
+                 * @property {number} datapoint.width - The width of the datapoint.
+                 * @property {number} datapoint.x - The x-coordinate of the datapoint.
+                 * @property {number} datapoint.y - The y-coordinate of the datapoint.
+                 * @property {number} index - The index of the datapoint in the series.
+                 */
+
+                /**
+                 * On click returns the data of the selected datapoint.
+                 * @param {VueUiSparklineDatapoint} datapoint - The selected datapoint.
+                 */
+                function selectDatapoint(datapoint) {
+                    console.log(datapoint);
+                }`,
+                funcTs: `type VueUiSparklineDatapoint = {
+                    readonly datapoint: {
+                        absoluteValue: number
+                        color: string
+                        id: string
+                        period: string
+                        plotValue: number
+                        toMax: number
+                        width: number
+                        x: number
+                        y: number
+                    }
+                    readonly index: number
+                }
+                /**
+                * @selectDatapoint - On click returns the data of the selected datapoint
+                */
+                function selectDatapoint(datapoint: VueUiSparklineDatapoint){
+                    console.log(datapoint)
+                }`
+            }
+        ],
+        VueUiSparkbar: [
+            {
+                name: 'selectDatapoint',
+                func: `/**
+                 * @typedef {Object} VueUiSparkbarDatapoint
+                 * @property {Object} datapoint - The datapoint details.
+                 * @property {string} datapoint.color - The color associated with the datapoint.
+                 * @property {string} datapoint.name - The name associated with the datapoint.
+                 * @property {number} datapoint.rounding - The rounding precision for the datapoint value.
+                 * @property {string} datapoint.suffix - The suffix to append to the datapoint value.
+                 * @property {number} datapoint.value - The value of the datapoint.
+                 * @property {number} index - The index of the datapoint in the series.
+                 */
+
+                /**
+                 * On click returns the data of the selected datapoint.
+                 * @param {VueUiSparkbarDatapoint} datapoint - The selected datapoint.
+                 */
+                function selectDatapoint(datapoint) {
+                    console.log(datapoint);
+                }`,
+                funcTs: `type VueUiSparkbarDatapoint = {
+                    readonly datapoint: {
+                        color: string
+                        name: string
+                        rounding: number
+                        suffix: string
+                        value: number
+                    }
+                    readonly index: number
+                }
+                /**
+                * @selectDatapoint - On click returns the data of the selected datapoint
+                */
+                function selectDatapoint(datapoint: VueUiSparkbarDatapoint){
+                    console.log(datapoint)
+                }`
+            }
+        ],
+        VueUiSparkStackbar: [
+            {
+                name: 'selectDatapoint',
+                func: `/**
+                 * @typedef {Object} VueUiSparkStackbarDatapoint
+                 * @property {Object} datapoint - The datapoint details.
+                 * @property {string} datapoint.color - The color associated with the datapoint.
+                 * @property {string} datapoint.id - The unique identifier of the datapoint.
+                 * @property {string} datapoint.name - The name associated with the datapoint.
+                 * @property {number} datapoint.proportion - The proportion value of the datapoint.
+                 * @property {string} datapoint.proportionLabel - The label representing the proportion.
+                 * @property {number} datapoint.start - The starting value of the stack segment.
+                 * @property {number} datapoint.value - The value of the datapoint.
+                 * @property {number} datapoint.width - The width of the datapoint.
+                 * @property {number} index - The index of the datapoint in the series.
+                 */
+
+                /**
+                 * On click returns the data of the selected datapoint.
+                 * @param {VueUiSparkStackbarDatapoint} datapoint - The selected datapoint.
+                 */
+                function selectDatapoint(datapoint) {
+                    console.log(datapoint);
+                }`,
+                funcTs: `type VueUiSparkStackbarDatapoint = {
+                    readonly datapoint: {
+                        color: string
+                        id: string
+                        name: string
+                        proportion: number
+                        proportionLabel: string
+                        start: number
+                        value: number
+                        width: number
+                    }
+                    readonly index: number
+                }
+                /**
+                * @selectDatapoint - On click returns the data of the selected datapoint
+                */
+                function selectDatapoint(datapoint: VueUiSparkStackbarDatapoint){
+                    console.log(datapoint)
+                }`
+            }
+        ],
+        VueUiSparkHistogram: [
+            {
+                name: 'selectDatapoint',
+                func: `/**
+                 * @typedef {Object} VueUiSparkHistogramDatapoint
+                 * @property {Object} datapoint - The datapoint details.
+                 * @property {string} datapoint.color - The color of the datapoint.
+                 * @property {string} datapoint.gradient - The gradient style for the datapoint.
+                 * @property {number} datapoint.height - The height of the datapoint.
+                 * @property {number} datapoint.intensity - The intensity value of the datapoint.
+                 * @property {number} datapoint.proportion - The proportion value of the datapoint.
+                 * @property {string} datapoint.stroke - The stroke color of the datapoint.
+                 * @property {number} datapoint.textAnchor - The anchor position for the text.
+                 * @property {string} datapoint.timeLabel - The label for the time period associated with the datapoint.
+                 * @property {number} datapoint.trapX - The trapezoid X-coordinate for the datapoint.
+                 * @property {number} datapoint.unitWidth - The unit width of the datapoint.
+                 * @property {number} datapoint.value - The value of the datapoint.
+                 * @property {string} datapoint.valueLabel - The label representing the value.
+                 * @property {number} datapoint.width - The width of the datapoint.
+                 * @property {number} datapoint.x - The x-coordinate of the datapoint.
+                 * @property {number} datapoint.y - The y-coordinate of the datapoint.
+                 * @property {number} index - The index of the datapoint in the series.
+                 */
+
+                /**
+                 * On click returns the data of the selected datapoint.
+                 * @param {VueUiSparkHistogramDatapoint} datapoint - The selected datapoint.
+                 */
+                function selectDatapoint(datapoint) {
+                    console.log(datapoint);
+                }`,
+                funcTs: `type VueUiSparkHistogramDatapoint = {
+                    readonly datapoint: {
+                        color: string
+                        gradient: string
+                        height: number
+                        intensity: number
+                        proportion: number
+                        stroke: string
+                        textAnchor: number
+                        timeLabel: string
+                        trapX: number
+                        unitWidth: number
+                        value: number
+                        valueLabel: string
+                        width: number
+                        x: number
+                        y: number
+                    }
+                    readonly index: number
+                }
+                /**
+                * @selectDatapoint - On click returns the data of the selected datapoint
+                */
+                function selectDatapoint(datapoint: VueUiSparkHistogramDatapoint){
+                    console.log(datapoint)
+                }`
+            }
+        ],
+        VueUiQuickChart: []
     }
 
     return emitExamples[componentName]

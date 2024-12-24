@@ -63,7 +63,7 @@ ${emitFuncs}
 </script>
 
 <template>
-  <div :style="{ width: '600px' }">
+  <div :style="{ width: '600px' /** Set your styles for the chart wrapper */ }">
     <VueDataUi
       component="${component}"
       ${!datasetType ? '' : `:dataset="dataset"`}
