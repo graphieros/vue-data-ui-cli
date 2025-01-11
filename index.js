@@ -434,7 +434,7 @@ const supportedComponents = {
 };
 
 program
-  .version('1.0.16')
+  .version('1.0.17')
   .description('CLI to generate Vue Data UI component boilerplates')
   .action(async () => {
     const answers = await inquirer.prompt([
