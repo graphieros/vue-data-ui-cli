@@ -433,15 +433,25 @@ const supportedComponents = {
   }
 };
 
+(function displayBanner() {
+  console.log(chalk.green.bold(`
+▗▖  ▗▖▗▖ ▗▖▗▄▄▄▖    ▗▄▄▄  ▗▄▖▗▄▄▄▖▗▄▖     ▗▖ ▗▖ ▄     ▗▄▄▖▗▖    ▄
+▐▌  ▐▌▐▌ ▐▌▐▌       ▐▌  █▐▌ ▐▌ █ ▐▌ ▐▌    ▐▌ ▐▌ █    ▐▌   ▐▌      
+▐▌  ▐▌▐▌ ▐▌▐▛▀▀▘    ▐▌  █▐▛▀▜▌ █ ▐▛▀▜▌    ▐▌ ▐▌ █    ▐▌   ▐▌    █  
+ ▝▚▞▘ ▝▚▄▞▘▐▙▄▄▖    ▐▙▄▄▀▐▌ ▐▌ █ ▐▌ ▐▌    ▝▚▄▞▘ █    ▝▚▄▄▖▐▙▄▄▖ █
+  `))
+  console.log(chalk.blue.bold(`Create Vue Data UI boilerplate components easily\n\n`))
+})()
+
 program
-  .version('1.0.18')
+  .version('1.0.19')
   .description('CLI to generate Vue Data UI component boilerplates')
   .action(async () => {
     const answers = await inquirer.prompt([
       {
         type: 'list',
         name: 'chartComponent',
-        message: 'Select a Vue Data UI chart component:',
+        message: 'Select a Vue Data UI chart component:\n',
         choices: Object.keys(supportedComponents),
         validate: (input) =>
           input ? true : 'You must select a chart component.',
