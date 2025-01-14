@@ -43,7 +43,7 @@ export default ({
 <script setup${useTypescript ? ' lang="ts"' : ''}>
 import { ${[useComputedConfig, useComputedDataset].includes(false) ? 'ref, ' : ''}${useComputedConfig || useComputedDataset ? 'computed ' : ''}} from "vue";
 import { VueDataUi${useTypescript ? `,${['number', 'Array<Array<string | number>>', ''].includes(datasetType) ? '' : `type ${datasetType},`} type ${configType} }` : '}'} from "vue-data-ui";
-import "vue-data-ui/style.css";
+import "vue-data-ui/style.css"; // Consider importing the css in your main file
 
 ${!datasetType ? '' : `const dataset = ${useComputedDataset ? `computed${dsType}(() => {
   return ${ds};
@@ -63,7 +63,7 @@ ${emitFuncs}
 </script>
 
 <template>
-  <div :style="{ width: '600px' /** Set your styles for the chart wrapper */ }">
+  <div :style="{ width: '600px' /** Set your styles for the chart wrapper. This wrapper is not necessary. */ }">
     <VueDataUi
       component="${component}"
       ${!datasetType ? '' : `:dataset="dataset"`}
