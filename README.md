@@ -23,6 +23,8 @@ vdui-cli
 
 ![image](https://github.com/user-attachments/assets/ec300a98-986c-4e28-adcb-67bc64c8898c)
 
+https://github.com/user-attachments/assets/2554de06-cf8f-460e-bcd3-addd7291151c
+
 You will be prompted for the following:
 
 - Select a Vue Data UI component
