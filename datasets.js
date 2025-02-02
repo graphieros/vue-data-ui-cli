@@ -8,6 +8,13 @@ export default (componentName) => {
                 dataLabels: true,
             },
         ],
+        VueUiCirclePack: [
+            { name: 'Datapoint A', value: 200 },
+            { name: 'Datapoint B', value: 150 },
+            { name: 'Datapoint C', value: 100 },
+            { name: 'Datapoint D', value: 50 },
+            { name: 'Datapoint E', value: 25 },
+        ],
         VueUiDonut: [
             {
                 name: 'Series 1',

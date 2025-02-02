@@ -430,7 +430,15 @@ const supportedComponents = {
     isDatasetArray: false,
     configType: 'VueUiSkeletonConfig',
     slots: []
-  }
+  },
+  VueUiCirclePack: {
+    key: 'vue_ui_circle_pack',
+    link: 'vue-ui-circle-pack',
+    datasetType: 'VueUiCirclePackDatasetItem',
+    isDatasetArray: true,
+    configType: 'VueUiCirclePackConfig',
+    slots: ['source']
+  },
 };
 
 (function displayBanner() {
