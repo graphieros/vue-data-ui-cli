@@ -1,5 +1,9 @@
 export default (componentName) => {
     const datasets = {
+        VueUiWorld: {
+            USA: { value: 26465 },
+            CHN: { value: 17679 },
+        },
         VueUiXy: [
             {
                 name: 'Serie',

@@ -21,6 +21,14 @@ try {
 }
 
 const supportedComponents = {
+  VueUiWorld: {
+    key: 'vue_ui_world',
+    link: 'vue-ui-world',
+    datasetType: 'VueUiWorldDataset',
+    configType: 'VueUiWorldConfig',
+    isDatasetArray: false,
+    slots: ['source']
+  },
   VueUiXy: {
     key: 'vue_ui_xy',
     link: 'vue-ui-xy',
@@ -452,7 +460,7 @@ const supportedComponents = {
 })()
 
 program
-  .version('1.2.6')
+  .version('1.3.0')
   .description('CLI to generate Vue Data UI component boilerplates')
   .action(async () => {
     const answers = await inquirer.prompt([
