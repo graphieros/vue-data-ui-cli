@@ -21,6 +21,14 @@ try {
 }
 
 const supportedComponents = {
+  VueUiRidgeline: {
+    key: 'vue_ui_ridgeline',
+    link: 'vue-ui-ridgeline',
+    datasetType: 'VueUiRidgelineDatasetItem',
+    configType: 'VueUiRidgelineConfig',
+    isDatasetArray: true,
+    slots: ['source']
+  },
   VueUiWorld: {
     key: 'vue_ui_world',
     link: 'vue-ui-world',
@@ -460,7 +468,7 @@ const supportedComponents = {
 })()
 
 program
-  .version('1.4.6')
+  .version('1.5.0')
   .description('CLI to generate Vue Data UI component boilerplates')
   .action(async () => {
     const answers = await inquirer.prompt([

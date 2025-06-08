@@ -1,5 +1,43 @@
 export default (componentName) => {
     const datasets = {
+        VueUiRidgeline: [
+            {
+                name: "Moscow",
+                datapoints: [
+                    {
+                        name: "Average Temperature (°C)",
+                        values: [-7, -6, 0, 8, 15, 18, 20, 18, 13, 7, 1, -4],
+                    },
+                ],
+            },
+            {
+                name: "Chicago",
+                datapoints: [
+                    {
+                        name: "Average Temperature (°C)",
+                        values: [-4, -2, 3, 10, 16, 22, 24, 23, 19, 12, 5, -1],
+                    },
+                ],
+            },
+            {
+                name: "Toronto",
+                datapoints: [
+                    {
+                        name: "Average Temperature (°C)",
+                        values: [-3, -2, 2, 9, 15, 20, 22, 21, 17, 10, 4, -1],
+                    },
+                ],
+            },
+            {
+                name: "Berlin",
+                datapoints: [
+                    {
+                        name: "Average Temperature (°C)",
+                        values: [0, 2, 6, 12, 16, 19, 21, 21, 17, 12, 7, 3],
+                    },
+                ],
+            }, 
+        ],
         VueUiWorld: {
             USA: { value: 26465 },
             CHN: { value: 17679 },
