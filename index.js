@@ -21,6 +21,14 @@ try {
 }
 
 const supportedComponents = {
+  VueUiChord: {
+    key: 'vue_ui_chord',
+    link: 'vue-ui-chord',
+    datasetType: 'VueUiChordDataset',
+    configType: 'VueUiChordConfig',
+    isDatasetArray: false,
+    slots: ['source']
+  },
   VueUiRidgeline: {
     key: 'vue_ui_ridgeline',
     link: 'vue-ui-ridgeline',

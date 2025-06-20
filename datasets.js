@@ -1,5 +1,13 @@
 export default (componentName) => {
     const datasets = {
+        VueUiChord: {
+            matrix: [
+                [1, 1, 1],
+                [1, 1, 1],
+                [1, 1, 1]
+            ],
+            labels: ["A", "B", "C"]
+        },
         VueUiRidgeline: [
             {
                 name: "Moscow",
