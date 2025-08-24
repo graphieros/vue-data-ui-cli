@@ -183,12 +183,12 @@ const supportedComponents = {
     configType: 'VueUiXyCanvasConfig',
     slots: ['source']
   },
-  VueUiVerticalBar: {
-    key: 'vue_ui_vertical_bar',
-    link: 'vue-ui-vertical-bar',
-    datasetType: 'VueUiVerticalBarDatasetItem',
+  VueUiHorizontalBar: {
+    key: 'vue_ui_horizontal_bar',
+    link: 'vue-ui-horizontal-bar',
+    datasetType: 'VueUiHorizontalBarDatasetItem',
     isDatasetArray: true,
-    configType: 'VueUiVerticalBarConfig',
+    configType: 'VueUiHorizontalBarConfig',
     slots: ['source']
   },
   VueUiParallelCoordinatePlot: {
@@ -476,7 +476,7 @@ const supportedComponents = {
 })()
 
 program
-  .version('2.17.11')
+  .version('3.0.1')
   .description('CLI to generate Vue Data UI component boilerplates')
   .action(async () => {
     const answers = await inquirer.prompt([
