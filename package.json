@@ -1,6 +1,6 @@
 {
   "name": "vue-data-ui-cli",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "private": false,
   "description": "A CLI tool to generate Vue Data UI chart component boilerplates",
   "main": "index.js",
@@ -16,7 +16,7 @@
     "boilerplate",
     "charts"
   ],
-  "author": "Alec Lloyd Probert",  
+  "author": "Alec Lloyd Probert",
   "license": "MIT",
   "repository": {
     "type": "git",
