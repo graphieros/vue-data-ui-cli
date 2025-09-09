@@ -24,9 +24,9 @@
   },
   "homepage": "https://vue-data-ui.graphieros.com/",
   "dependencies": {
-    "chalk": "^5.4.0",
-    "commander": "^12.1.0",
-    "inquirer": "^12.2.0"
+    "chalk": "^5.6.2",
+    "commander": "^14.0.0",
+    "inquirer": "^12.9.4"
   },
   "type": "module",
   "bin": {
