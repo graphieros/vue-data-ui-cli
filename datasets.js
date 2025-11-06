@@ -136,6 +136,28 @@ export default (componentName) => {
                 series: [25, 23, 9, 13, 25, 31],
             },
         ],
+        VueUiStackline: [
+            {
+                name: 'Serie 1',
+                series: [19, 20.07, 30, 40, 50, 60],
+                shape: 'square'
+            },
+            {
+                name: 'Serie 2',
+                series: [13, 8, 9, 13, 25, 27],
+                shape: 'diamond'
+            },
+            {
+                name: 'Serie 3',
+                series: [13, 10, 9, 13, 25, 19],
+                shape: 'triangle'
+            },
+            {
+                name: 'Serie 4',
+                series: [25, 23, 9, 13, 25, 31],
+                shape: 'star'
+            },
+        ],
         VueUiSparkline: [
             { period: 'T0', value: 0 },
             { period: 'T1', value: 1 },

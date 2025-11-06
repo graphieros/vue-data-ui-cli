@@ -95,6 +95,14 @@ const supportedComponents = {
     configType: 'VueUiStackbarConfig',
     slots: ['source']
   },
+  VueUiStackline: {
+    key: 'vue_ui_stackline',
+    link: 'vue-ui-stackline',
+    datasetType: 'VueUiStacklineDatasetItem',
+    isDatasetArray: true,
+    configType: 'VueUiStacklineConfig',
+    slots: ['source']
+  },
   VueUiSparkline: {
     key: 'vue_ui_sparkline',
     link: 'vue-ui-sparkline',
