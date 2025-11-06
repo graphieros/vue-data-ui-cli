@@ -1,6 +1,6 @@
 {
   "name": "vue-data-ui-cli",
-  "version": "3.5.2",
+  "version": "3.6.0",
   "private": false,
   "description": "A CLI tool to generate Vue Data UI chart component boilerplates",
   "main": "index.js",
