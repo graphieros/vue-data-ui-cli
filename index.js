@@ -471,6 +471,14 @@ const supportedComponents = {
     configType: 'VueUiCirclePackConfig',
     slots: ['source']
   },
+  VueUiDag: {
+    key: 'vue_ui_dag',
+    link: 'vue-ui-dag',
+    datasetType: 'VueUiDagDataset',
+    isDatasetArray: false,
+    configType: 'VueUiDagConfig',
+    slots: ['source']
+  }
 };
 
 (function displayBanner() {
@@ -484,7 +492,7 @@ const supportedComponents = {
 })()
 
 program
-  .version('3.7.16')
+  .version('3.8.0')
   .description('CLI to generate Vue Data UI component boilerplates')
   .action(async () => {
     const answers = await inquirer.prompt([
