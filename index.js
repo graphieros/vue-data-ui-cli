@@ -478,7 +478,15 @@ const supportedComponents = {
     isDatasetArray: false,
     configType: 'VueUiDagConfig',
     slots: ['source']
-  }
+  },
+  VueUiGeo: {
+    key: 'vue_ui_geo',
+    link: 'vue-ui-geo',
+    datasetType: 'VueUiGeoDatasetItem',
+    isDatasetArray: true,
+    configType: 'VueUiGeoConfig',
+    slots: ['source']
+  },
 };
 
 (function displayBanner() {
@@ -492,7 +500,7 @@ const supportedComponents = {
 })()
 
 program
-  .version('3.8.5')
+  .version('3.9.0')
   .description('CLI to generate Vue Data UI component boilerplates')
   .action(async () => {
     const answers = await inquirer.prompt([
