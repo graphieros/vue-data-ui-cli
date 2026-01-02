@@ -487,6 +487,14 @@ const supportedComponents = {
     configType: 'VueUiGeoConfig',
     slots: ['source']
   },
+  VueUiBump: {
+    key: 'vue_ui_bump',
+    link: 'vue-ui-bump',
+    datasetType: 'VueUiBumpDatasetItem',
+    isDatasetArray: true,
+    configType: 'VueUiBumpConfig',
+    slots: ['source']
+  },
 };
 
 (function displayBanner() {
@@ -500,7 +508,7 @@ const supportedComponents = {
 })()
 
 program
-  .version('3.9.22')
+  .version('3.10.0')
   .description('CLI to generate Vue Data UI component boilerplates')
   .action(async () => {
     const answers = await inquirer.prompt([
